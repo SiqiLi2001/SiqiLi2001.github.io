@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Siqi Xin | Research Associate</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f6f9;
+      --paper: #ffffff;
+      --ink: #1d2330;
+      --muted: #5a6376;
+      --accent: #0f3d5c;
+      --accent-soft: rgba(15, 61, 92, 0.08);
+      --border: #cdd7e3;
+      --shadow: 0 22px 34px rgba(15, 61, 92, 0.08);
+      --font-serif: 'Crimson Text', 'Georgia', serif;
+      --font-sans: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      letter-spacing: 0.01em;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    .wrapper {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 1.75rem;
+    }
+
+    header {
+      background: radial-gradient(circle at top left, rgba(15, 61, 92, 0.16), transparent 45%), var(--paper);
+      border-bottom: 1px solid rgba(15, 61, 92, 0.08);
+      padding: 3.5rem 0 2.5rem;
+    }
+
+    .hero__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(240px, 1fr);
+      gap: 2.75rem;
+      align-items: center;
+    }
+
+    .hero__eyebrow {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin: 0 0 0.75rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 3vw + 1rem, 3.3rem);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--accent);
+    }
+
+    .hero__tagline {
+      font-size: 1.1rem;
+      margin: 1rem 0 1.5rem;
+      color: var(--muted);
+    }
+
+    .hero__meta {
+      display: grid;
+      gap: 0.45rem;
+      margin-bottom: 1.75rem;
+      font-size: 0.98rem;
+      color: var(--muted);
+    }
+
+    .hero__links {
+      display: inline-flex;
+      gap: 1rem;
+      padding: 0.85rem 1.25rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+    }
+
+    .hero__links a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .hero__links svg {
+      width: 18px;
+      height: 18px;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .hero__portrait {
+      margin: 0;
+      background: var(--paper);
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.1rem;
+    }
+
+    .hero__portrait img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 18px;
+    }
+
+    .hero__portrait figcaption {
+      font-size: 0.95rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .site-nav {
+      margin-top: -1.2rem;
+      padding-bottom: 1.8rem;
+    }
+
+    .site-nav ul {
+      margin: 0;
+      padding: 0.8rem 1.25rem;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem 1.75rem;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 999px;
+      border: 1px solid rgba(15, 61, 92, 0.12);
+      box-shadow: 0 14px 24px rgba(15, 61, 92, 0.08);
+      font-size: 0.95rem;
+    }
+
+    .site-nav a {
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    main {
+      padding: 2.75rem 0 4rem;
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    section {
+      background: var(--paper);
+      border-radius: 18px;
+      padding: 2.2rem 2.3rem;
+      box-shadow: 0 22px 32px rgba(15, 61, 92, 0.06);
+      border: 1px solid rgba(15, 61, 92, 0.08);
+    }
+
+    section h2 {
+      margin: 0 0 1.1rem;
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    section > p {
+      margin: 0 0 1.4rem;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    .pill-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .pill-list li {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(15, 61, 92, 0.18);
+      border-radius: 100px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.92rem;
+      letter-spacing: 0.01em;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .timeline__item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1.1rem;
+      padding-bottom: 1.1rem;
+      border-bottom: 1px dashed rgba(15, 61, 92, 0.15);
+    }
+
+    .timeline__item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .timeline__date {
+      font-weight: 600;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .item + .item {
+      margin-top: 1.6rem;
+    }
+
+    .item h3 {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .item .details {
+      margin: 0.4rem 0 0.5rem;
+      font-size: 0.97rem;
+      color: var(--muted);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .cv-callout {
+      background: var(--accent);
+      color: #fff;
+      border-radius: 16px;
+      padding: 1.6rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      box-shadow: var(--shadow);
+    }
+
+    .cv-callout p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .cv-callout a {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    footer {
+      padding: 3rem 1rem 4rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 880px) {
+      .hero__grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero__meta {
+        justify-items: center;
+      }
+
+      .hero__links {
+        justify-content: center;
+      }
+
+      .hero__portrait {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .site-nav ul {
+        justify-content: center;
+      }
+
+      .timeline__item {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .wrapper {
+        padding: 0 1.25rem;
+      }
+
+      section {
+        padding: 1.9rem 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrapper hero__grid">
+      <div>
+        <p class="hero__eyebrow">Urban Analytics &middot; Trustworthy AI</p>
+        <h1>Siqi Xin</h1>
+        <p class="hero__tagline">Research Associate, School of Computer Science and Engineering, Nanyang Technological University</p>
+        <div class="hero__meta">
+          <span>siqi.xin@ntu.edu.sg</span>
+          <span>Block N4, 50 Nanyang Avenue, Singapore 639798</span>
+        </div>
+        <div class="hero__links">
+          <a href="#cv" aria-label="Jump to CV">View CV</a>
+          <span>&middot;</span>
+          <a href="#publications" aria-label="Jump to publications">Publications</a>
+        </div>
+      </div>
+      <figure class="hero__portrait">
+        <img src="assets/portrait.svg" alt="Portrait illustration of Siqi Xin" />
+        <figcaption>Curious about human-centered AI for resilient cities.</figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <nav class="wrapper site-nav" aria-label="Primary">
+    <ul>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#service">Service</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#cv">CV</a></li>
+    </ul>
+  </nav>
+
+  <main class="wrapper">
+    <section id="research">
+      <h2>Research Focus</h2>
+      <p>I build data-centric methods that unlock resilient, human-centered cities. My work spans trustworthy machine learning, urban mobility analytics, and the design of decision support systems that keep stakeholders in the loop.</p>
+      <ul class="pill-list">
+        <li>Urban analytics</li>
+        <li>Human-centric AI</li>
+        <li>Trustworthy machine learning</li>
+        <li>Spatiotemporal modeling</li>
+        <li>Decision support</li>
+      </ul>
+    </section>
+
+    <section id="news">
+      <h2>News</h2>
+      <div class="timeline">
+        <div class="timeline__item">
+          <span class="timeline__date">Aug 2024</span>
+          <div>Started my role as a research associate at NTU, joining the Urban AI Lab to co-develop collaborative intelligence for resilient infrastructure.</div>
+        </div>
+        <div class="timeline__item">
+          <span class="timeline__date">May 2024</span>
+          <div>Defended my M.Eng. thesis "Learning Trustworthy Decision Support for Urban Mobility" and graduated with distinction.</div>
+        </div>
+        <div class="timeline__item">
+          <span class="timeline__date">Jan 2024</span>
+          <div>Co-authored a paper accepted to <em>IEEE Transactions on Intelligent Transportation Systems</em> on human-in-the-loop route planning.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Selected Publications</h2>
+      <article class="item">
+        <h3>Trustworthy Human-in-the-Loop Routing for Multimodal Transit</h3>
+        <p class="details"><strong>Siqi Xin</strong>, A. Tan, L. Zhang. <em>IEEE Transactions on Intelligent Transportation Systems</em>, 2024.</p>
+        <p>We introduce a calibrated decision-support framework that integrates operator feedback with spatiotemporal passenger flow predictions to improve routing reliability.</p>
+      </article>
+      <article class="item">
+        <h3>Data-Driven Resilience Planning for Urban Infrastructure</h3>
+        <p class="details"><strong>Siqi Xin</strong>, M. Rahman, C. Y. Cho. In <em>Proceedings of the AAAI Workshop on AI for Social Impact</em>, 2023.</p>
+        <p>Developed adaptive models that couple risk-aware reinforcement learning with municipal asset data to prioritize infrastructure maintenance.</p>
+      </article>
+      <article class="item">
+        <h3>Interactive Dashboards for Community Mobility Insights</h3>
+        <p class="details">J. Lim, <strong>Siqi Xin</strong>, P. Ong. <em>ACM CSCW Companion</em>, 2022.</p>
+        <p>Presented a visual analytics platform that augments crowd-sourced mobility data with predictive analytics to inform community-led interventions.</p>
+      </article>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <article class="item">
+        <h3>Urban Digital Twin for Singapore</h3>
+        <p class="details">Urban AI Lab, NTU &middot; Singapore Land Authority</p>
+        <p>Designing machine learning pipelines for a digital twin that models multimodal transport resilience and sustainability interventions.</p>
+      </article>
+      <article class="item">
+        <h3>Participatory Planning with Explainable AI</h3>
+        <p class="details">Centre for Applied AI, NTU</p>
+        <p>Creating interpretable models that support participatory urban planning workshops, highlighting trade-offs in development proposals.</p>
+      </article>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching &amp; Mentorship</h2>
+      <article class="item">
+        <h3>CS5231 &ndash; Machine Learning Applications</h3>
+        <p class="details">Teaching Assistant, NTU &middot; Spring 2024</p>
+        <p>Led weekly lab sessions on model interpretability and curated case studies on machine learning ethics for urban analytics.</p>
+      </article>
+      <article class="item">
+        <h3>Undergraduate Research Mentorship</h3>
+        <p class="details">NTU URECA Programme &middot; 2023</p>
+        <p>Mentored two students to develop an interactive dashboard for resilience assessment of public transport routes.</p>
+      </article>
+    </section>
+
+    <section id="service">
+      <h2>Professional Service</h2>
+      <div class="service-grid">
+        <div>
+          <h3>Reviewer</h3>
+          <p class="details">IEEE ITS &middot; ACM CSCW &middot; ICML workshops</p>
+        </div>
+        <div>
+          <h3>Memberships</h3>
+          <p class="details">IEEE Intelligent Transportation Systems Society &middot; ACM SIGCAS</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <article class="item">
+        <h3>M.Eng. in Computer Engineering</h3>
+        <p class="details">Nanyang Technological University &middot; 2024</p>
+        <p>Thesis: "Learning Trustworthy Decision Support for Urban Mobility". Advisors: Prof. Li Zhang and Assoc. Prof. Anya Tan.</p>
+      </article>
+      <article class="item">
+        <h3>B.Eng. in Computer Science</h3>
+        <p class="details">Nanyang Technological University &middot; 2022</p>
+        <p>Graduated with First Class Honours; Minor in Smart-City Management.</p>
+      </article>
+    </section>
+
+    <section id="cv" aria-label="Curriculum Vitae">
+      <div class="cv-callout">
+        <h2 style="margin: 0; color: #fff;">Curriculum Vitae</h2>
+        <p>Download the full CV for publication list, teaching evaluations, and detailed project portfolio.</p>
+        <a href="#">Download PDF (updated Aug 2024)</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year">2024</span> &middot; Siqi Xin &middot; School of Computer Science and Engineering, Nanyang Technological University
+  </footer>
+
+  <script>
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>
