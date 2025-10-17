@@ -7,7 +7,7 @@
   <style>
     :root {
       color-scheme: light;
-      --bg: #f4f6f9;
+      --bg: #f0f8f0;
       --paper: #ffffff;
       --ink: #1d2330;
       --muted: #5a6376;
@@ -56,9 +56,9 @@
 
     .hero__grid {
       display: grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(240px, 1fr);
+      grid-template-columns: minmax(240px, 1fr) minmax(0, 2.1fr);
       gap: 2.75rem;
-      align-items: center;
+      align-items: start;
     }
 
     .hero__eyebrow {
@@ -123,8 +123,9 @@
       box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       gap: 1.1rem;
+      justify-self: start;
     }
 
     .hero__portrait img {
@@ -136,7 +137,7 @@
     .hero__portrait figcaption {
       font-size: 0.95rem;
       color: var(--muted);
-      text-align: center;
+      text-align: left;
     }
 
     .site-nav {
@@ -251,6 +252,25 @@
       color: var(--muted);
     }
 
+    #education .item h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    #education .item p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    #education .item .details {
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
     .service-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -288,15 +308,6 @@
     @media (max-width: 880px) {
       .hero__grid {
         grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero__meta {
-        justify-items: center;
-      }
-
-      .hero__links {
-        justify-content: center;
       }
 
       .hero__portrait {
@@ -327,6 +338,9 @@
 <body>
   <header>
   <div class="wrapper hero__grid">
+    <figure class="hero__portrait">
+      <img src="assets/siqi.jpg" alt="Portrait illustration of Siqi Li" />
+    </figure>
     <div>
       <p class="hero__eyebrow"></p>
       <h1>Siqi Li (李思琪)</h1>
@@ -334,138 +348,70 @@
         <!-- 这里先不放职位，后面Research Focus里介绍 -->
       </p>
       <div class="hero__meta">
+        <!-- <span>Nanyang Technological University</span> -->
         <span>LISI0037@e.ntu.edu.sg</span>
+        <span>Research Associate @ Nanyang Technological University</span>
         <!-- 地址去掉了 -->
+      </div>
     </div>
-    <figure class="hero__portrait">
-      <img src="assets/portrait.svg" alt="Portrait illustration of Siqi Li" />
-         </figure>
   </div>
 </header>
 
 
   <nav class="wrapper site-nav" aria-label="Primary">
     <ul>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#teaching">Teaching</a></li>
-      <li><a href="#service">Service</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#publications">Publications</a></li>
       <li><a href="#cv">CV</a></li>
     </ul>
   </nav>
 
   <main class="wrapper">
-    <section id="research">
-      <h2>Research Focus</h2>
-      <p>I build data-centric methods that unlock resilient, human-centered cities. My work spans trustworthy machine learning, urban mobility analytics, and the design of decision support systems that keep stakeholders in the loop.</p>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am currently a Research Associate in the School of Electrical and Electronic Engineering at Nanyang Technological University, Singapore, supervised by Prof. Tay Wee Peng.</p>
+      <p>I received my B.Eng. in Automation from Ocean University of China (2019-2023, Qingdao). Between 2021 and 2023, I was supervised by Prof. Yao Peng on research in path planning and multi-agent systems.</p>
+      <p>From 2024 to 2025, I completed my M.Sc. in the School of Electrical and Electronic Engineering, Nanyang Technological University, Singapore, supervised by Prof. Tay Wee Peng and closely guided by Dr. Wang. My research during this period focused on Computer Vision, particularly 3D vision and localization.</p>
       <ul class="pill-list">
-        <li>Urban analytics</li>
-        <li>Human-centric AI</li>
-        <li>Trustworthy machine learning</li>
-        <li>Spatiotemporal modeling</li>
-        <li>Decision support</li>
       </ul>
-    </section>
-
-    <section id="news">
-      <h2>News</h2>
-      <div class="timeline">
-        <div class="timeline__item">
-          <span class="timeline__date">Aug 2024</span>
-          <div>Started my role as a research associate at NTU, joining the Urban AI Lab to co-develop collaborative intelligence for resilient infrastructure.</div>
-        </div>
-        <div class="timeline__item">
-          <span class="timeline__date">May 2024</span>
-          <div>Defended my M.Eng. thesis "Learning Trustworthy Decision Support for Urban Mobility" and graduated with distinction.</div>
-        </div>
-        <div class="timeline__item">
-          <span class="timeline__date">Jan 2024</span>
-          <div>Co-authored a paper accepted to <em>IEEE Transactions on Intelligent Transportation Systems</em> on human-in-the-loop route planning.</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="publications">
-      <h2>Selected Publications</h2>
-      <article class="item">
-        <h3>Trustworthy Human-in-the-Loop Routing for Multimodal Transit</h3>
-        <p class="details"><strong>Siqi Xin</strong>, A. Tan, L. Zhang. <em>IEEE Transactions on Intelligent Transportation Systems</em>, 2024.</p>
-        <p>We introduce a calibrated decision-support framework that integrates operator feedback with spatiotemporal passenger flow predictions to improve routing reliability.</p>
-      </article>
-      <article class="item">
-        <h3>Data-Driven Resilience Planning for Urban Infrastructure</h3>
-        <p class="details"><strong>Siqi Xin</strong>, M. Rahman, C. Y. Cho. In <em>Proceedings of the AAAI Workshop on AI for Social Impact</em>, 2023.</p>
-        <p>Developed adaptive models that couple risk-aware reinforcement learning with municipal asset data to prioritize infrastructure maintenance.</p>
-      </article>
-      <article class="item">
-        <h3>Interactive Dashboards for Community Mobility Insights</h3>
-        <p class="details">J. Lim, <strong>Siqi Xin</strong>, P. Ong. <em>ACM CSCW Companion</em>, 2022.</p>
-        <p>Presented a visual analytics platform that augments crowd-sourced mobility data with predictive analytics to inform community-led interventions.</p>
-      </article>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <article class="item">
-        <h3>Urban Digital Twin for Singapore</h3>
-        <p class="details">Urban AI Lab, NTU &middot; Singapore Land Authority</p>
-        <p>Designing machine learning pipelines for a digital twin that models multimodal transport resilience and sustainability interventions.</p>
-      </article>
-      <article class="item">
-        <h3>Participatory Planning with Explainable AI</h3>
-        <p class="details">Centre for Applied AI, NTU</p>
-        <p>Creating interpretable models that support participatory urban planning workshops, highlighting trade-offs in development proposals.</p>
-      </article>
-    </section>
-
-    <section id="teaching">
-      <h2>Teaching &amp; Mentorship</h2>
-      <article class="item">
-        <h3>CS5231 &ndash; Machine Learning Applications</h3>
-        <p class="details">Teaching Assistant, NTU &middot; Spring 2024</p>
-        <p>Led weekly lab sessions on model interpretability and curated case studies on machine learning ethics for urban analytics.</p>
-      </article>
-      <article class="item">
-        <h3>Undergraduate Research Mentorship</h3>
-        <p class="details">NTU URECA Programme &middot; 2023</p>
-        <p>Mentored two students to develop an interactive dashboard for resilience assessment of public transport routes.</p>
-      </article>
-    </section>
-
-    <section id="service">
-      <h2>Professional Service</h2>
-      <div class="service-grid">
-        <div>
-          <h3>Reviewer</h3>
-          <p class="details">IEEE ITS &middot; ACM CSCW &middot; ICML workshops</p>
-        </div>
-        <div>
-          <h3>Memberships</h3>
-          <p class="details">IEEE Intelligent Transportation Systems Society &middot; ACM SIGCAS</p>
-        </div>
-      </div>
     </section>
 
     <section id="education">
       <h2>Education</h2>
       <article class="item">
-        <h3>M.Eng. in Computer Engineering</h3>
-        <p class="details">Nanyang Technological University &middot; 2024</p>
-        <p>Thesis: "Learning Trustworthy Decision Support for Urban Mobility". Advisors: Prof. Li Zhang and Assoc. Prof. Anya Tan.</p>
+        <h3>M.Sc. in Signal Processing</h3>
+        <p>School of Electrical and Electronic Engineering (EEE)</p>
+        <p class="details">Nanyang Technological University · Singapore &middot; 2024-2025</p>
       </article>
       <article class="item">
-        <h3>B.Eng. in Computer Science</h3>
-        <p class="details">Nanyang Technological University &middot; 2022</p>
-        <p>Graduated with First Class Honours; Minor in Smart-City Management.</p>
+        <h3>B.Eng. in Automation</h3>
+        <p>School of Engineering, Department of Automation</p>
+        <p class="details">Ocean University of China · Qingdao, China &middot;  2019-2023</p>
+      </article>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <article class="item">
+        <h3>Research Associate</h3>
+        <p class="details">Nanyang Technological University &middot; Oct 2025 - Present</p>
+      </article>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <article class="item">
+        <h3>Interactive Dashboards for Community Mobility Insights</h3>
+        <p class="details">J. Lim, <strong>Siqi Li</strong>, P. Ong. <em>ACM CSCW Companion</em>, 2022.</p>
+        <p>Presented a visual analytics platform that augments crowd-sourced mobility data with predictive analytics to inform community-led interventions.</p>
       </article>
     </section>
 
     <section id="cv" aria-label="Curriculum Vitae">
+      <h2>Curriculum Vitae</h2>
       <div class="cv-callout">
-        <h2 style="margin: 0; color: #fff;">Curriculum Vitae</h2>
         <p>Download the full CV for publication list, teaching evaluations, and detailed project portfolio.</p>
         <a href="#">Download PDF (updated Aug 2024)</a>
       </div>
